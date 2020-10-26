@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeModel1StoreContainer" CdmEntityContainer="EmployeeEntities1">
+    <EntitySetMapping Name="LeaveApplicationDatas">
+      <EntityTypeMapping TypeName="EmployeeModel1.LeaveApplicationData">
+        <MappingFragment StoreEntitySet="LeaveApplicationData">
+          <ScalarProperty Name="Application_no" ColumnName="Application_no" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" />
+          <ScalarProperty Name="StartingDate" ColumnName="StartingDate" />
+          <ScalarProperty Name="EndingDate" ColumnName="EndingDate" />
+          <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="LeavePurpose" ColumnName="LeavePurpose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LeaveTypes">
+      <EntityTypeMapping TypeName="EmployeeModel1.LeaveType">
+        <MappingFragment StoreEntitySet="LeaveType">
+          <ScalarProperty Name="LeaveType_id" ColumnName="LeaveType_id" />
+          <ScalarProperty Name="LeaveTypeName" ColumnName="LeaveTypeName" />
+          <ScalarProperty Name="LeaveTypeDescription" ColumnName="LeaveTypeDescription" />
+          <ScalarProperty Name="NoOfLeavesPerYear" ColumnName="NoOfLeavesPerYear" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

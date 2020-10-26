@@ -1,0 +1,82 @@
+//Employee Leave Management application database 
+
+CREATE TABLE [dbo].[CityDetails] (
+    [City_id]   INT          IDENTITY (1, 1) NOT NULL,
+    [CityName]  VARCHAR (50) DEFAULT (NULL) NULL,
+    [Status_id] INT          DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([City_id] ASC)
+);
+
+CREATE TABLE [dbo].[Country] (
+    [Country_id]  INT          IDENTITY (1, 1) NOT NULL,
+    [CountryName] VARCHAR (50) DEFAULT (NULL) NULL,
+    [Status_id]   INT          DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([Country_id] ASC)
+);
+
+CREATE TABLE [dbo].[Department] (
+    [Dept_id]        INT          IDENTITY (1, 1) NOT NULL,
+    [DeptName]       VARCHAR (50) DEFAULT (NULL) NULL,
+    [DeptDesciption] VARCHAR (50) DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([Dept_id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[Designation] (
+    [Desig_id]  INT          IDENTITY (1, 1) NOT NULL,
+    [DesigType] VARCHAR (50) DEFAULT (NULL) NULL,
+    [DesigDesc] VARCHAR (50) DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([Desig_id] ASC)
+);
+
+
+CREATE TABLE [dbo].[EmployeeDetails] (
+    [Emp_id]      INT          IDENTITY (1, 1) NOT NULL,
+    [EmpName]     VARCHAR (50) DEFAULT (NULL) NULL,
+    [Designation] VARCHAR (50) DEFAULT (NULL) NULL,
+    [Dept_id]     INT          DEFAULT (NULL) NULL,
+    [Address]     VARCHAR (50) DEFAULT (NULL) NULL,
+    [City_id]     INT          DEFAULT (NULL) NULL,
+    [State_id]    INT          DEFAULT (NULL) NULL,
+    [Country_id]  INT          DEFAULT (NULL) NULL,
+    [Email_id]    VARCHAR (50) DEFAULT (NULL) NULL,
+    [Contact_no]  VARCHAR (50) DEFAULT (NULL) NULL,
+    [username]    VARCHAR (50) DEFAULT (NULL) NULL,
+    [password]    VARCHAR (50) DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([Emp_id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[LeaveApplicationData] (
+    [Application_no] INT          IDENTITY (1, 1) NOT NULL,
+    [username]       VARCHAR (50) DEFAULT (NULL) NULL,
+    [LeaveTypeId]    INT          DEFAULT (NULL) NULL,
+    [StartingDate]   DATETIME     DEFAULT (NULL) NULL,
+    [EndingDate]     DATETIME     DEFAULT (NULL) NULL,
+    [ApplyDate]      DATETIME     DEFAULT (NULL) NULL,
+    [NoOfDays]       INT          DEFAULT (NULL) NULL,
+    [LeavePurpose]   VARCHAR (50) DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([Application_no] ASC)
+);
+
+CREATE TABLE [dbo].[LeaveType] (
+    [LeaveType_id]         INT          IDENTITY (1, 1) NOT NULL,
+    [LeaveTypeName]        VARCHAR (50) DEFAULT (NULL) NULL,
+    [LeaveTypeDescription] VARCHAR (50) DEFAULT (NULL) NULL,
+    [NoOfLeavesPerYear]    INT          DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([LeaveType_id] ASC)
+);
+
+CREATE TABLE [dbo].[State] (
+    [State_id]  INT          IDENTITY (1, 1) NOT NULL,
+    [StateName] VARCHAR (50) DEFAULT (NULL) NULL,
+    [Status_id] INT          DEFAULT (NULL) NULL,
+    PRIMARY KEY CLUSTERED ([State_id] ASC)
+);
+
+CREATE TABLE [dbo].[Table] (
+    [Id] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);

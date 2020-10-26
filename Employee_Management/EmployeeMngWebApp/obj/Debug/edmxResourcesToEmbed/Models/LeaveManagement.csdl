@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LeaveApplicationData">
+    <Key>
+      <PropertyRef Name="Application_no" />
+    </Key>
+    <Property Name="Application_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveTypeId" Type="Int32" />
+    <Property Name="StartingDate" Type="DateTime" Precision="3" />
+    <Property Name="EndingDate" Type="DateTime" Precision="3" />
+    <Property Name="ApplyDate" Type="DateTime" Precision="3" />
+    <Property Name="NoOfDays" Type="Int32" />
+    <Property Name="LeavePurpose" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LeaveType">
+    <Key>
+      <PropertyRef Name="LeaveType_id" />
+    </Key>
+    <Property Name="LeaveType_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LeaveTypeDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NoOfLeavesPerYear" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="EmployeeEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LeaveApplicationDatas" EntityType="Self.LeaveApplicationData" />
+    <EntitySet Name="LeaveTypes" EntityType="Self.LeaveType" />
+  </EntityContainer>
+</Schema>
